@@ -1,5 +1,25 @@
+READ ENTITIES OF zi_leave_request IN LOCAL MODE
+  ENTITY zi_leave_request
+  ALL FIELDS WITH CORRESPONDING #( keys )
+  RESULT DATA(lt_result).
+  LOOP AT lt_result INTO DATA(ls_result).
+   APPEND VALUE #(
+      %tky = ls_result-%tky
+      %action-approve   = COND #( WHEN ls_result-Status = 'S'
+                              THEN if_abap_behv=>fc-o-enabled
+                              ELSE if_abap_behv=>fc-o-disabled )
+      %action-reject   = COND #( WHEN ls_result-Status = 'S'
+                              THEN if_abap_behv=>fc-o-enabled
+                              ELSE if_abap_behv=>fc-o-disabled )
+           ) TO result.
+  ENDLOOP.
+
+
+
 # First
 Programs
+
+
 
 this repositery contains simple jaava programs,
 programs include
