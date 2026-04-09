@@ -1,3 +1,9 @@
+@Consumption.semanticObject: 'BillingDocument'
+@ui.lineItem : [ { position: 10, label: 'Billing Document'},
+{type : #FOR_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display'}]
+
+AccountingDocument
+
 READ ENTITIES OF zi_leave_request IN LOCAL MODE
   ENTITY zi_leave_request
   ALL FIELDS WITH CORRESPONDING #( keys )
