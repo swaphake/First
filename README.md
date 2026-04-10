@@ -1,3 +1,10 @@
+row_number( )
+        over(
+          partition by _Open.zuonr, _Open.xblnr
+          order by _Open.belnr, _Open.buzei
+        ) as Counter,
+
+
 DATA: lt_je_deep TYPE TABLE FOR ACTION IMPORT i_journalentrytp~post,
 lv_cid TYPE abp_behv_cid.
 
