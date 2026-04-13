@@ -1,3 +1,25 @@
+DATA(lv_group_id) = 1.
+
+  LOOP AT ct_calculated_data ASSIGNING FIELD-SYMBOL(<fs_data>)
+       GROUP BY ( assignment = <fs_data>-assignment
+                  reference  = <fs_data>-reference )
+       ASCENDING.
+
+    " Count records in group
+    DATA(lv_count) = lines( GROUP <fs_data> ).
+
+    IF lv_count > 1.
+
+      LOOP AT GROUP <fs_data> ASSIGNING FIELD-SYMBOL(<fs_item>).
+        <fs_item>-groupid = lv_group_id.
+      ENDLOOP.
+
+      lv_group_id = lv_group_id + 1.
+
+    ENDIF.
+
+  ENDLOOP.
+
 row_number( )
         over(
           partition by _Open.zuonr, _Open.xblnr
