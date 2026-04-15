@@ -1,3 +1,4 @@
+SD-01Apr26-1376-974_E_QTCSV_Additional custom fields for QTC
 DATA(lv_group_id) = 1.
 
   LOOP AT ct_calculated_data ASSIGNING FIELD-SYMBOL(<fs_data>)
