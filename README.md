@@ -1,3 +1,5 @@
+/sap/opu/odata4/sap/zui_c_cre_deb_memo_settletp_o4/srvd/sap/zui_c_cred_deb_memo_settletp/0001/
+
 SD-01Apr26-1376-974_E_QTCSV_Additional custom fields for QTC
 DATA(lv_group_id) = 1.
 
