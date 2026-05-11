@@ -1,3 +1,23 @@
+Budgeted sales dollars.  ZCDOB - BSALED 
+
+Budgeted sales units.  ZCDOB - BSALEU 
+
+Budgeted receipt dollars from Purchase orders for the supplier. ZCDOB - BPORD 
+
+Budgeted receipt units from the supplier. ZCDOB - BPORU 
+
+Budgeted supplier returns in dollars. ZCDOB - BRPOD 
+
+Budgeted supplier returns in units. ZCDOB - BRPOU 
+
+Budgeted Customer returns dollars. ZCDOB - BCRD 
+
+Budgeted Customer returns in units. ZCDOB – BCRU 
+
+Budgeted Inventory cost for supplier material. ZCDOB - BICS 
+
+Budgeted Inventory Units for supplier materials. ZCDOB - BICU 
+
 /sap/opu/odata4/sap/zui_mm_open_to_buy_o4/srvd/sap/zui_mm_open_to_buy_o4/0001/
 
 /sap/opu/odata4/sap/zui_c_cre_deb_memo_settletp_o4/srvd/sap/zui_c_cred_deb_memo_settletp/0001/
