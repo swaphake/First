@@ -1,3 +1,5 @@
+/sap/opu/odata4/sap/zui_mm_open_to_buy_o4/srvd/sap/zui_mm_open_to_buy_o4/0001/
+
 /sap/opu/odata4/sap/zui_c_cre_deb_memo_settletp_o4/srvd/sap/zui_c_cred_deb_memo_settletp/0001/
 
 SD-01Apr26-1376-974_E_QTCSV_Additional custom fields for QTC
