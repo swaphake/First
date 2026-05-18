@@ -1,3 +1,5 @@
+DS4K901898 100   SHAKE        Standard V4 Service Activation Service Group CDI_CDS
+
 define view entity ZI_CASP_GR
   as select from ekbe
 {
