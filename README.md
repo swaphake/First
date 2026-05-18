@@ -1,3 +1,31 @@
+define view entity ZI_CASP_GR
+  as select from ekbe
+{
+    key ebeln,
+    key ebelp,
+    key belnr,
+    key gjahr,
+    key buzei,
+
+        matnr,
+        werks,
+
+        budat,
+
+        bwart,
+        vgabe,
+
+        menge,
+
+        @Semantics.amount.currencyCode: 'Waers'
+        dmbtr,
+
+        waers
+}
+where
+      vgabe = '1'
+  and bwart in ( '101', '102', '161' )
+
 DS4K901776 100   SHAKE        PTP-07May26-689-DI_529_Purchasing - UI Service
 DS4K901130 100   SHAKE        RTR-30Apr26-434-R311_Check Form TVARVC entries
 
