@@ -1,3 +1,26 @@
+  t_data = VALUE #( FOR GROUPS g1 OF ls_row IN gt_data GROUP BY ( wadat = ls_row-wadat
+                                                                  werks = ls_row-werks
+                                                                  land1 = ls_row-land1
+                                                                  "erdat = ls_row-erdat
+                                                               )
+                     LET sum = REDUCE #( INIT line TYPE ty_sum_line
+                                         FOR members_g1 IN GROUP g1
+                                         NEXT line-wadat = members_g1-wadat
+                                              line-werks = members_g1-werks
+                                              line-land1 = members_g1-land1
+                                              line-lfimg = line-lfimg + members_g1-lfimg
+                                        )
+                  IN ( wadat = g1-wadat
+                       werks = g1-werks
+                       land1 = g1-land1
+                       lfimg = sum-lfimg
+                       "lfimg_t0
+                       "lfimg_older
+                       "lfimg_abc
+                      )
+                   ).
+
+
 /sap/opu/odata4/sap/zui_c_analytics_per_supp_o4/srvd/sap/zui_c_analytics_per_supplier/0001/
 
 AnalyticsPerSupplier
