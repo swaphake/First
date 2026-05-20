@@ -1,3 +1,7 @@
+/sap/opu/odata4/sap/zui_c_analytics_per_supp_o4/srvd/sap/zui_c_analytics_per_supplier/0001/
+
+AnalyticsPerSupplier
+
 DS4K901898 100   SHAKE        Standard V4 Service Activation Service Group CDI_CDS
 
 define view entity ZI_CASP_GR
