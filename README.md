@@ -1,3 +1,5 @@
+
+  https://stackoverflow.com/questions/79291764/multiple-for-groups-let-reduce-aggregations-with-abap-7-57
   t_data = VALUE #( FOR GROUPS g1 OF ls_row IN gt_data GROUP BY ( wadat = ls_row-wadat
                                                                   werks = ls_row-werks
                                                                   land1 = ls_row-land1
