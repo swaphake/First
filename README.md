@@ -7,7 +7,61 @@ UDMO_S_DISPUTE_INCL  - Structure
  https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F0702')/S12OP
  https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/3eb1567cf97543c08087efb0936964e6/122a0456337d787fe10000000a441470.html?version=1809.000
 
+DI_317_E_RTR: Mass field update 
 
+This enhancement is for the creation of a program that will be used to mass update fields in dispute cases created against a chargeback document and an extension of custom fields into the Manage dispute case Fiori tile. 
+
+A template should be used to mass update.  
+
+Upon downloading the template, all Case ID of disputed items should be available for edit.  
+
+If upload has empty fields, no change to the original value.  
+
+Custom Fields required to be extended.  
+
+Status reason code:- User defined reason codes which will be provided by D&H – New Field not currently in SAP.  
+
+Customer reference field: Customer PO number: Ref key3 in sap - Created at the time of cash application:  --Dependency on ESKER evaluation. ( XREF3 Field)   -  
+
+RMA number – sales order (Assignment) -- Assignment Field   - BSID-ZUONR 
+
+Standard available fields to edit in the Manage dispute case Fiori app 
+
+Processor 
+
+Coordinator 
+
+Person Responsible 
+
+Priority 
+
+Processing Deadline 
+
+Planned Close Date 
+
+External Reference 
+
+Case Title 
+
+Available to be edited: 
+
+External Reference 
+
+Status 
+
+Category 
+
+Reason Code 
+
+Contact Person ID 
+
+Contact Person Name 
+
+Email 
+
+Telephone No. 
+
+Fax Number 
 DI_529_CALM_3_4987_Open_to_Buy_Analytics_Report 
 
 DS4K901747       SHAKE        PTP 07MAY26 689: DI_529_Purchasing-Analytics - Open To Buy
