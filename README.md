@@ -1,3 +1,12 @@
+SCMG_T_CASE_ATTR
+ 
+UDMCASEATTR00
+UDMO_S_DISPUTE_INCL  - Structure
+
+ https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F0702')/S12OP
+ https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/3eb1567cf97543c08087efb0936964e6/122a0456337d787fe10000000a441470.html?version=1809.000
+
+
 DI_529_CALM_3_4987_Open_to_Buy_Analytics_Report 
 
 DS4K901747       SHAKE        PTP 07MAY26 689: DI_529_Purchasing-Analytics - Open To Buy
