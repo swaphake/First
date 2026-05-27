@@ -1,4 +1,55 @@
+DS4K901747       SHAKE        PTP 07MAY26 689: DI_529_Purchasing-Analytics - Open To Buy
+ DS4K901776 100   SHAKE        PTP 07MAY26 689: DI_529_Purchasing - UI Service
 
+Behaviou def
+ZC_MM_OPEN_TO_BUY
+ZR_MM_OPEN_TO_BUY
+
+class (ABAP Objects)
+
+ZCL_MM_ANALYTICS_CALC
+ZCL_MM_OPEN_TO_BUY
+
+ Definition Language Source
+
+ZAB_FILEUPLOAD
+ZC_MM_OPEN_TO_BUY
+ZI_MM_ANALYTICS_ACT_CUST_RET
+ZI_MM_ANALYTICS_ACT_FD_SALES
+ZI_MM_ANALYTICS_ACT_INV_COST
+ZI_MM_ANALYTICS_ACT_RECP_COST
+ZI_MM_ANALYTICS_ACT_SALES
+ZI_MM_ANALYTICS_PER_SUPPLIER
+ZI_MM_ANALYT_ACT_OPEN_CUST_RET
+ZI_MM_C_ANALYTICS_PER_SUPPLIER
+ZR_MM_OPEN_TO_BUY
+ZR_MM_PO_DATA
+ZR_MM_PO_DATA_THIRD_PARTY
+
+    CDS metadata extension
+
+        ZC_MM_OPEN_TO_BUY
+        ZI_MM_C_ANALYTICS_PER_SUPPLIER_MDE
+
+    SAP Gateway OData V4 Backend Service Group & Assignments
+    Service Binding
+
+        ZUI_C_ANALYTICS_PER_SUPP_O4
+        ZUI_MM_OPEN_TO_BUY_O4
+
+    Service Definition
+
+        ZUI_C_ANALYTICS_PER_SUPPLIER
+        ZUI_MM_OPEN_TO_BUY_O4
+
+    Assignment: Service   > Authorization Objects
+    Table
+
+        ZMM_OPEN_TO_BUY
+        ZMM_OPEN_TO_BUYD
+
+
+========================================================================================================================================
   https://stackoverflow.com/questions/79291764/multiple-for-groups-let-reduce-aggregations-with-abap-7-57
   t_data = VALUE #( FOR GROUPS g1 OF ls_row IN gt_data GROUP BY ( wadat = ls_row-wadat
                                                                   werks = ls_row-werks
