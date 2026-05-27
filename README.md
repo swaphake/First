@@ -1,3 +1,4 @@
+https://vhdhbds4ci.sap.dandh.net:44300/sap/bc/ui2/flp?sap-client=100&sap-language=EN&saml2=disabled#Shell-home
 SCMG_T_CASE_ATTR
  
 UDMCASEATTR00
