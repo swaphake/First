@@ -1,3 +1,8 @@
+/sap/opu/odata4/sap/zui_c_manage_dispute_cases_v4/srvd/sap/zui_c_manage_dispute_cases/0001/
+
+DisputeCase
+
+
 https://vhdhbds4ci.sap.dandh.net:44300/sap/bc/ui2/flp?sap-client=100&sap-language=EN&saml2=disabled#Shell-home
 SCMG_T_CASE_ATTR
  
