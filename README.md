@@ -1,3 +1,56 @@
+DS4K902643       SHAKE        RTR 16Jun26 - Custom Fields RTR Area
+DS4K902070       SHAKE        RTR 27MAY26 440: DI_317_E_RTR: Mass field update
+
+
+API Release State of Objects
+
+    ZR_FI_STATUSREASONCODE_VH           DDLS
+
+Behavior Definition
+
+    ZC_FI_MANAGE_DISPUTE_CASES
+    ZI_FI_MANAGE_DISPUTE_CASES
+
+Class (ABAP Objects)
+
+    ZCL_FI_317_MANAGE_DISPUTE_CASE
+
+Data Definition Language Source
+
+    ZAB_317_EDITPARAMETERS
+    ZAB_317_FILEUPLOAD
+    ZC_FI_MANAGE_DISPUTE_CASES
+    ZI_FI_MANAGE_DISPUTE_CASES
+    ZR_FI_STATUSREASONCODE_VH
+
+CDS metadata extension
+
+    ZC_FI_MANAGE_DISPUTE_CASES_EXT
+ Function Group
+
+     ZFI_317_DISPUTE_ATTR_CHNG
+
+ SAP Gateway OData V4 Backend Service Group & Assignments
+ Service Binding
+
+     ZUI_C_MANAGE_DISPUTE_CASES_V4
+
+ Service Definition
+
+     ZUI_C_MANAGE_DISPUTE_CASES
+
+ Assignment: Service   > Authorization Objects
+ Table
+
+     ZFI_DISPCASE_D
+     ZFI_S_DISPUTECASE
+
+ Table Type
+
+     ZFI_TT_DISPUTECASE
+    
+=-----------------------------------------------------=================================
+
 ZZ1_3616EEF453EB
 ZZ1_644B6ECCA934
 ZZ1_6B2AFE01CCB1
