@@ -1,4 +1,21 @@
+DS4K902655       SHAKE        QTC 15JUN26 254: DI_131_E_QTCSV: SPA/Bid/Agreement Validatio
+DS4K902699 100   SHAKE        QTC 15JUN26 254: DI_131 SPA/Bid/Agreement Validation TVARVC
+
+100ZSD_S_131_CONDITION_RECORD    S0000
+ Class (ABAP Objects)
+
+     ZCL_SD_131_SPA_BID_VALIDATION
+
+ Data Definition Language Source
+
+     ZR_SD_CONDITION_CONTRACTS
+     
+
+
 DI_131_E_QTCSV: SPA/Bid/Agreement Validation
+
+==========================================================================================================
+
 Custom Field
 
     ZZ1_CUSTOMERREFERENCE
