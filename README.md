@@ -15,7 +15,24 @@ DS4K902699 100   SHAKE        QTC 15JUN26 254: DI_131 SPA/Bid/Agreement Validati
 DI_131_E_QTCSV: SPA/Bid/Agreement Validation
 
 ==========================================================================================================
-
+ companycode                   TYPE bukrs,
+            plant                         TYPE ewerk,
+            purchaseorganization          TYPE ekorg,
+            supplier                      TYPE lifnr,
+            forcastmonth                  TYPE lfmon,
+            forcastyear                   TYPE lfgja,
+            forcastdate                   TYPE dats,
+            budgetedsalesdollars          TYPE bprei,
+            budgetedsalesunits            TYPE bstmg,
+            budgetedreceiptdollars        TYPE bprei,
+            budgetedreceiptunits          TYPE bstmg,
+            budgetedsupplierreturndollars TYPE bprei,
+            budgetedsupplierreturnunits   TYPE bstmg,
+            budgetedcustomerreturndollars TYPE bprei,
+            budgetedcustomerreturnunits   TYPE bstmg,
+            budgetedinventorycost         TYPE bprei,
+            budgetedinventoryunits        TYPE bstmg,
+            
 Custom Field
 
     ZZ1_CUSTOMERREFERENCE
