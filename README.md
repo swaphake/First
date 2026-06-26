@@ -1,3 +1,10 @@
+GET https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartner eq '01000028'&$expand=to_BuPaIdentification($select=BPIdentificationType,BPIdentificationNumber)
+
+GET https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BusinessPartner eq '01000028' and BPIdentificationType eq 'ZVLGUS'
+
+
+
+
 DS4K902655       SHAKE        QTC 15JUN26 254: DI_131_E_QTCSV: SPA/Bid/Agreement Validatio
 DS4K902699 100   SHAKE        QTC 15JUN26 254: DI_131 SPA/Bid/Agreement Validation TVARVC
 
