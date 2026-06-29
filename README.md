@@ -1,3 +1,7 @@
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BPIdentificationNumber eq '1234567879'
+
+============================================
+
 GET https://<SapHostname>:<Port>/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BPIdentificationType eq 'ZVLGUS' and BPIdentificationNumber eq '123456789'&$expand=to_BusinessPartner
 
 ==================================
