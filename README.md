@@ -1,3 +1,6 @@
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartner eq '0017401026'&$expand=to_BuPaIdentification
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BusinessPartner eq '0017401026' and BPIdentificationType eq 'ZVLGUS'
+
 GET https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartner eq '01000028'&$expand=to_BuPaIdentification($select=BPIdentificationType,BPIdentificationNumber)
 
 GET https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BusinessPartner eq '01000028' and BPIdentificationType eq 'ZVLGUS'
