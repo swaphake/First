@@ -1,3 +1,7 @@
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BPIdentificationNumber eq '1234567879'&$select=BusinessPartner,BPIdentificationType,BPIdentificationNumber
+
+============================================================
+
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BPIdentificationNumber eq '1234567879'
 
 ============================================
