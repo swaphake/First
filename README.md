@@ -1,3 +1,5 @@
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/UI_RFM_PO_MNG/I_PurchasingGroup?$filter=PurchasingGroup eq '747'
+
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_SupplierPurchasingOrg?$filter=Supplier eq '900030'
 
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_CustomerSalesArea?$filter=Customer eq '0017401026'
