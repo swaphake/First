@@ -1,3 +1,242 @@
+  METHOD if_rap_query_provider~select.
+* Local data
+* Tables
+    DATA: lt_grid TYPE tt_grid.
+
+    TRY.
+* Get filter
+        DATA(lt_filter) = io_request->get_filter( )->get_as_ranges( ).
+
+* Get Business Partner
+        DATA(lv_partner) = VALUE bu_partner( lt_filter[ name = to_upper( c_field_business_partner ) ]-range[ 1 ]-low OPTIONAL ).
+
+* Get Credit Segment
+        DATA(lv_segment) = VALUE ukm_credit_sgmnt( lt_filter[ name = to_upper( c_field_credit_segment ) ]-range[ 1 ]-low OPTIONAL ).
+
+        IF lv_partner IS INITIAL OR
+           lv_segment IS INITIAL.
+* Key fields are not set.
+          MESSAGE e001(ukm_commons_msg) INTO cl_ukm_commons_auxiliary=>sv_message.
+
+* Raise exception
+          RAISE EXCEPTION NEW lx_rap_query_provider( textid = VALUE #( LET ls_message = cx_ukm_commons=>convert_message_to_bapiret( ) IN
+                                                                       msgid = ls_message-id
+                                                                       msgno = ls_message-number
+                                                                       attr1 = ls_message-message_v1
+                                                                       attr2 = ls_message-message_v2
+                                                                       attr3 = ls_message-message_v3
+                                                                       attr4 = ls_message-message_v4 ) ).
+
+        ENDIF.
+
+* Get Aging Information
+        cl_ukm_commons_auxiliary=>get_instance(
+          )->mo_data_access->get_exposure_aging(
+          EXPORTING
+            iv_partner          = lv_partner
+            iv_credit_sgmnt     = lv_segment
+         IMPORTING
+           es_aging            = DATA(ls_aging)
+           es_aging_labels     = DATA(ls_aging_labels)
+           ev_no_due_items     = DATA(lv_no_due_items)
+           ev_no_overdue_items = DATA(lv_no_overdue_items)
+           es_days_due         = DATA(ls_days_due)
+           es_days_overdue     = DATA(ls_days_overdue) ).
+
+* Build aging table
+* Sorting:
+* Overdue Period 6-1
+* Due Period 1-6
+        IF ls_days_overdue-days_5 IS NOT INITIAL.
+* Set overdue 6 period
+          DATA(lt_data) = VALUE tt_grid( ( businesspartner              = lv_partner
+                                           creditsegment                = lv_segment
+                                           agingperiod                  = 1
+                                           staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue6_bucket
+                                           creditsegmentcurrency        = ls_aging-currency
+                                           criticality                  = 1
+                                           isoverdue                    = abap_true
+                                           fieldhorizontalaxisvalue     = ls_aging_labels-overdue6_bucket ) ).
+
+        ENDIF.
+
+        IF ls_days_overdue-days_4 IS NOT INITIAL.
+* Set overdue 5 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 2
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue5_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 1
+                          isoverdue                    = abap_true
+                          fieldhorizontalaxisvalue     = ls_aging_labels-overdue5_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_overdue-days_3 IS NOT INITIAL.
+* Set overdue 4 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 3
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue4_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 1
+                          isoverdue                    = abap_true
+                          fieldhorizontalaxisvalue     = ls_aging_labels-overdue4_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_overdue-days_2 IS NOT INITIAL.
+* Set overdue 3 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 4
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue3_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 1
+                          isoverdue                    = abap_true
+                          fieldhorizontalaxisvalue     = ls_aging_labels-overdue3_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_overdue-days_1 IS NOT INITIAL.
+* Set overdue 2 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 5
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue2_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 1
+                          isoverdue                    = abap_true
+                          fieldhorizontalaxisvalue     = ls_aging_labels-overdue2_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_overdue-days_1 IS NOT INITIAL.
+* Set overdue period 1
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 6
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-overdue1_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 1
+                          isoverdue                    = abap_true
+                          fieldhorizontalaxisvalue     = ls_aging_labels-overdue1_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_1 IS NOT INITIAL.
+* Set due period 1
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 7
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due1_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due1_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_1 IS NOT INITIAL.
+* Set due 2 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 8
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due2_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due2_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_2 IS NOT INITIAL.
+* Set due 3 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 9
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due3_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due3_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_3 IS NOT INITIAL.
+* Set due 4 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 10
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due4_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due4_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_4 IS NOT INITIAL.
+* Set due 5 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 11
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due5_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due5_bucket ) TO lt_data.
+
+        ENDIF.
+
+        IF ls_days_due-days_5 IS NOT INITIAL.
+* Set due 6 period
+          APPEND VALUE #( businesspartner              = lv_partner
+                          creditsegment                = lv_segment
+                          agingperiod                  = 12
+                          staticcrdtexpsramtinsgmtcrcy = ls_aging-due6_bucket
+                          creditsegmentcurrency        = ls_aging-currency
+                          criticality                  = 3
+                          isoverdue                    = abap_false
+                          fieldhorizontalaxisvalue     = ls_aging_labels-due6_bucket ) TO lt_data.
+
+        ENDIF.
+
+      CATCH cx_rap_query_request_changed cx_rap_query_response_changed cx_rap_query_filter_no_range INTO DATA(lo_x_rap_query).
+* Forward exception
+        RAISE EXCEPTION NEW lx_rap_query_provider( textid   = VALUE #( LET ls_message = cx_ukm_commons=>convert_exception_to_bapiret( lo_x_rap_query ) IN
+                                                                       msgid = ls_message-id
+                                                                       msgno = ls_message-number
+                                                                       attr1 = ls_message-message_v1
+                                                                       attr2 = ls_message-message_v2
+                                                                       attr3 = ls_message-message_v3
+                                                                       attr4 = ls_message-message_v4 )
+                                                   previous = lo_x_rap_query ).
+
+    ENDTRY.
+
+* Check if count is requested
+    IF io_request->is_total_numb_of_rec_requested( ).
+* Set count
+      io_response->set_total_number_of_records( iv_total_number_of_records = lines( lt_data ) ).
+
+    ENDIF.
+
+* Check if data is requested
+    IF io_request->is_data_requested( ).
+* Get sort
+      DATA(lt_sort) = io_request->get_sort_elements( ).
+
+* Set data
+      io_response->set_data( it_data = VALUE tt_grid( FOR ls_data_final IN lt_data
+                                                        FROM io_request->get_paging( )->get_offset( )
+                                                        TO io_request->get_paging( )->get_offset( ) + io_request->get_paging( )->get_page_size( )
+                                                        ( ls_data_final ) ) ).
+
+    ENDIF.
+
+
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/UI_RFM_PO_MNG/I_PurchasingGroup?$filter=PurchasingGroup eq '747'
 
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_SupplierPurchasingOrg?$filter=Supplier eq '900030'
