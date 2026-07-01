@@ -1,3 +1,5 @@
+https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_CustomerSalesArea?$filter=Customer eq '0017401026'
+
 zi_mm_analy_inv_cost_currmonth
 
 https://{{SapHostname}}:{{Port}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BuPaIdentification?$filter=BPIdentificationNumber eq '1234567879'&$select=BusinessPartner,BPIdentificationType,BPIdentificationNumber
