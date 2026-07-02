@@ -1,3 +1,5 @@
+https://api.sap.com/api/CE_SUPPLIERCONFIRMATION_0001/overview
+  
   METHOD if_rap_query_provider~select.
 * Local data
 * Tables
