@@ -1,3 +1,131 @@
+*-----------------------------------------------------------------------
+* Helper Structure
+*-----------------------------------------------------------------------
+TYPES: BEGIN OF ty_sched,
+         posnr TYPE vbep-posnr,
+         matnr TYPE vbap-matnr,
+         werks TYPE vbap-werks,
+         edatu TYPE vbep-edatu,
+         bmeng TYPE vbep-bmeng,
+       END OF ty_sched.
+
+DATA: lt_sched   TYPE STANDARD TABLE OF ty_sched,
+      lt_vbap_g  TYPE STANDARD TABLE OF vbapvb,
+      lt_vbep_g  TYPE STANDARD TABLE OF vbepvb,
+      lt_vbpa_g  TYPE STANDARD TABLE OF vbpavb,
+      lt_vbadr_g TYPE STANDARD TABLE OF vbadrvb,
+      lt_rates   TYPE ztt_rates.   "Replace with your rate table type
+
+FIELD-SYMBOLS:
+  <fs_vbap>  TYPE vbapvb,
+  <fs_vbep>  TYPE vbepvb,
+  <fs_group> TYPE any,
+  <fs_mem>   TYPE any.
+
+*-----------------------------------------------------------------------
+* Build helper table with Plant + Ship Date
+*-----------------------------------------------------------------------
+LOOP AT it_vbep ASSIGNING <fs_vbep>.
+
+  READ TABLE it_vbap ASSIGNING <fs_vbap>
+       WITH KEY posnr = <fs_vbep>-posnr.
+
+  IF sy-subrc <> 0.
+    CONTINUE.
+  ENDIF.
+
+  APPEND VALUE ty_sched(
+           posnr = <fs_vbep>-posnr
+           matnr = <fs_vbap>-matnr
+           werks = <fs_vbap>-werks
+           edatu = <fs_vbep>-edatu
+           bmeng = <fs_vbep>-bmeng ) TO lt_sched.
+
+ENDLOOP.
+
+*-----------------------------------------------------------------------
+* Group by Plant + Ship Date
+*-----------------------------------------------------------------------
+LOOP AT lt_sched INTO DATA(ls_sched)
+     GROUP BY (
+       werks = ls_sched-werks
+       edatu = ls_sched-edatu )
+     ASSIGNING FIELD-SYMBOL(<group>).
+
+  CLEAR:
+    lt_vbap_g,
+    lt_vbep_g,
+    lt_vbpa_g,
+    lt_vbadr_g,
+    lt_rates.
+
+  LOOP AT GROUP <group> ASSIGNING FIELD-SYMBOL(<member>).
+
+    "VBEP
+    READ TABLE it_vbep ASSIGNING <fs_vbep>
+         WITH KEY posnr = <member>-posnr
+                  edatu = <member>-edatu.
+
+    IF sy-subrc = 0.
+      APPEND <fs_vbep> TO lt_vbep_g.
+    ENDIF.
+
+    "VBAP
+    READ TABLE it_vbap ASSIGNING <fs_vbap>
+         WITH KEY posnr = <member>-posnr.
+
+    IF sy-subrc = 0.
+
+      IF NOT line_exists( lt_vbap_g[ posnr = <fs_vbap>-posnr ] ).
+        APPEND <fs_vbap> TO lt_vbap_g.
+      ENDIF.
+
+    ENDIF.
+
+  ENDLOOP.
+
+  "Header partner/address data
+  lt_vbpa_g  = it_vbpa.
+  lt_vbadr_g = it_vbadr.
+
+  "--------------------------------------------------------------
+  " Call SCT Rate Shop FM
+  "--------------------------------------------------------------
+  CALL FUNCTION 'ZXPS_RATESHOP_SO_SIM'
+    EXPORTING
+      i_vbak   = i_vbak
+      it_vbap  = lt_vbap_g
+      it_vbep  = lt_vbep_g
+      it_vbpa  = lt_vbpa_g
+      it_vbadr = lt_vbadr_g
+    IMPORTING
+      e_rates  = lt_rates.
+
+  "--------------------------------------------------------------
+  " Process/Append returned rates here
+  "--------------------------------------------------------------
+  APPEND LINES OF lt_rates TO et_rates.
+
+ENDLOOP.
+
+======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 https://api.sap.com/api/CE_SUPPLIERCONFIRMATION_0001/overview
   
   METHOD if_rap_query_provider~select.
