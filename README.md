@@ -1,3 +1,47 @@
+{
+    "SalesOrderType": "OR",
+    "SalesOrganization": "1010",
+    "DistributionChannel": "10",
+    "OrganizationDivision": "00",
+    "SoldToParty": "10100001",
+    "PurchaseOrderByCustomer": "Simulated via OData API",
+    "CustomerPaymentTerms": "",
+    "to_Item": [
+        {
+            "SalesOrderItem": "10",
+            "HigherLevelItem": "0",
+            "SalesOrderItemCategory": "TAN",
+            "PurchaseOrderByCustomer": "Simulated via OData API",
+            "Material": "TG11",
+            "RequestedQuantity": "1.000",
+            "DeliveryPriority": "2",
+            "to_ScheduleLine": [],
+            "to_Partner": [
+                {
+                    "PartnerFunction": "SH",
+                    "Customer": "10100002"
+                }
+            ],
+            "to_PricingElement": []
+        }
+    ],
+    "to_Pricing": {},
+    "to_PricingElement": [
+        {
+            "ConditionType": "DRN1",
+            "ConditionRateValue": "5"
+        }
+    ],
+    "to_Partner": [],
+    "to_Credit": {}
+}
+
+
+https://help.sap.com/docs/SAP_S4HANA_CLOUD/03c04db2a7434731b7fe21dca77440da/0ae72864ca5f405dadceed4693562aa8.html
+
+https://api.sap.com/api/OP_API_SALES_ORDER_SIMULATION_SRV_0001/path/post_A_SalesOrderSimulation
+
+
 *-----------------------------------------------------------------------
 * Helper Structure
 *-----------------------------------------------------------------------
