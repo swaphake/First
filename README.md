@@ -1,3 +1,717 @@
+{
+  "d" : {
+    "__metadata" : {
+      "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')",
+      "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')",
+      "type" : "API_SALES_ORDER_SRV.A_SalesOrderType",
+      "etag" : "W/\"datetimeoffset'2026-06-30T03%3A13%3A28.7367870Z'\""
+    },
+    "SalesOrder" : "2441",
+    "SalesOrderType" : "ZOR",
+    "SalesOrganization" : "1710",
+    "DistributionChannel" : "10",
+    "OrganizationDivision" : "00",
+    "SalesGroup" : "170",
+    "SalesOffice" : "170",
+    "SalesDistrict" : "Z00001",
+    "SoldToParty" : "17100001",
+    "CreationDate" : "\/Date(1782691200000)\/",
+    "CreatedByUser" : "ESCHEYDER",
+    "LastChangeDate" : "\/Date(1782691200000)\/",
+    "SenderBusinessSystemName" : "",
+    "ExternalDocumentID" : "",
+    "LastChangeDateTime" : "\/Date(1782789208736+0000)\/",
+    "ExternalDocLastChangeDateTime" : null,
+    "PurchaseOrderByCustomer" : "DI-376-0002",
+    "PurchaseOrderByShipToParty" : "",
+    "CustomerPurchaseOrderType" : "",
+    "CustomerPurchaseOrderDate" : "\/Date(1782691200000)\/",
+    "SalesOrderDate" : "\/Date(1782691200000)\/",
+    "TotalNetAmount" : "230.00",
+    "OverallDeliveryStatus" : "A",
+    "TotalBlockStatus" : "",
+    "OverallOrdReltdBillgStatus" : "",
+    "OverallSDDocReferenceStatus" : "",
+    "TransactionCurrency" : "USD",
+    "SDDocumentReason" : "",
+    "PricingDate" : "\/Date(1782691200000)\/",
+    "PriceDetnExchangeRate" : "1.00000",
+    "BillingPlan" : "",
+    "RequestedDeliveryDate" : "\/Date(1783382400000)\/",
+    "ShippingCondition" : "01",
+    "CompleteDeliveryIsDefined" : false,
+    "ShippingType" : "",
+    "HeaderBillingBlockReason" : "",
+    "DeliveryBlockReason" : "",
+    "DeliveryDateTypeRule" : "",
+    "IncotermsClassification" : "EXW",
+    "IncotermsTransferLocation" : "Shipping Point 1710 / 100 Te",
+    "IncotermsLocation1" : "Shipping Point 1710 / 100 Tech Dr / Harrisburg PA 17112",
+    "IncotermsLocation2" : "",
+    "IncotermsVersion" : "",
+    "CustomerPriceGroup" : "",
+    "PriceListType" : "",
+    "CustomerPaymentTerms" : "0001",
+    "PaymentMethod" : "",
+    "FixedValueDate" : null,
+    "AssignmentReference" : "",
+    "ReferenceSDDocument" : "",
+    "ReferenceSDDocumentCategory" : "",
+    "AccountingDocExternalReference" : "",
+    "CustomerAccountAssignmentGroup" : "",
+    "AccountingExchangeRate" : "0.00000",
+    "CorrespncExternalReference" : "",
+    "SlsDocSo2PLastContactPersnName" : "",
+    "SlsDocSo2PLstCntctPersnTelNmbr" : "981082775875-022",
+    "POCorrespncExternalReference" : "",
+    "CustomerConditionGroup1" : "",
+    "CustomerConditionGroup2" : "",
+    "CustomerConditionGroup3" : "",
+    "CustomerConditionGroup4" : "",
+    "CustomerConditionGroup5" : "",
+    "CustomerGroup" : "01",
+    "AdditionalCustomerGroup1" : "10",
+    "AdditionalCustomerGroup2" : "",
+    "AdditionalCustomerGroup3" : "",
+    "AdditionalCustomerGroup4" : "",
+    "AdditionalCustomerGroup5" : "",
+    "SlsDocIsRlvtForProofOfDeliv" : false,
+    "CustomerTaxClassification1" : "",
+    "CustomerTaxClassification2" : "",
+    "CustomerTaxClassification3" : "",
+    "CustomerTaxClassification4" : "",
+    "CustomerTaxClassification5" : "",
+    "CustomerTaxClassification6" : "",
+    "CustomerTaxClassification7" : "",
+    "CustomerTaxClassification8" : "",
+    "CustomerTaxClassification9" : "",
+    "TaxDepartureCountry" : "",
+    "VATRegistrationCountry" : "",
+    "SalesOrderApprovalReason" : "",
+    "SalesDocApprovalStatus" : "",
+    "OverallSDProcessStatus" : "B",
+    "TotalCreditCheckStatus" : "D",
+    "OverallTotalDeliveryStatus" : "A",
+    "OverallSDDocumentRejectionSts" : "A",
+    "BillingDocumentDate" : "\/Date(1783382400000)\/",
+    "ContractAccount" : "",
+    "AdditionalValueDays" : "0",
+    "CustomerPurchaseOrderSuplmnt" : "",
+    "ServicesRenderedDate" : null,
+    "ZZ1_VENDOR_HD_BLOCK_SDH" : false,
+    "ZZ1_Quote_Type_SDH" : "",
+    "ZZ1_DEP_SDH" : false,
+    "ZZ1_CUST_ORG_SDH" : "",
+    "ZZ1_PROBABILITY_VBAK_SDH" : "0",
+    "to_BillingPlan" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_BillingPlan"
+      }
+    },
+    "to_Item" : {
+      "results" : [
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+          },
+          "SalesOrder" : "2441",
+          "SalesOrderItem" : "10",
+          "HigherLevelItem" : "0",
+          "HigherLevelItemUsage" : "",
+          "SalesOrderItemCategory" : "ZTAN",
+          "SalesOrderItemText" : "11.6\" Celeron 4G 32G CRM OS",
+          "PurchaseOrderByCustomer" : "DI-376-0002",
+          "PurchaseOrderByShipToParty" : "",
+          "UnderlyingPurchaseOrderItem" : "",
+          "ExternalItemID" : "",
+          "Material" : "33",
+          "OriginallyRequestedMaterial" : "33",
+          "MaterialByCustomer" : "LAPTOP1",
+          "PricingDate" : "\/Date(1782691200000)\/",
+          "PricingReferenceMaterial" : "",
+          "BillingPlan" : "",
+          "RequestedQuantity" : "1",
+          "RequestedQuantityUnit" : "EA",
+          "RequestedQuantitySAPUnit" : "EA",
+          "RequestedQuantityISOUnit" : "EA",
+          "OrderQuantityUnit" : "EA",
+          "OrderQuantitySAPUnit" : "EA",
+          "OrderQuantityISOUnit" : "EA",
+          "ConfdDelivQtyInOrderQtyUnit" : "1",
+          "ItemGrossWeight" : "1.5",
+          "ItemNetWeight" : "0",
+          "ItemWeightUnit" : "LB",
+          "ItemWeightSAPUnit" : "LB",
+          "ItemWeightISOUnit" : "LBR",
+          "ItemVolume" : "219.069",
+          "ItemVolumeUnit" : "\"3",
+          "ItemVolumeSAPUnit" : "IN3",
+          "ItemVolumeISOUnit" : "INQ",
+          "TransactionCurrency" : "USD",
+          "NetAmount" : "130.00",
+          "TotalSDDocReferenceStatus" : "",
+          "SDDocReferenceStatus" : "",
+          "MaterialSubstitutionReason" : "",
+          "MaterialGroup" : "LEN-L1",
+          "MaterialPricingGroup" : "",
+          "AdditionalMaterialGroup1" : "",
+          "AdditionalMaterialGroup2" : "",
+          "AdditionalMaterialGroup3" : "",
+          "AdditionalMaterialGroup4" : "",
+          "AdditionalMaterialGroup5" : "",
+          "BillingDocumentDate" : "\/Date(1783382400000)\/",
+          "ContractAccount" : "",
+          "AdditionalValueDays" : "0",
+          "ServicesRenderedDate" : null,
+          "Batch" : "",
+          "ProductionPlant" : "1710",
+          "OriginalPlant" : "",
+          "AltvBsdConfSubstitutionStatus" : "",
+          "StorageLocation" : "",
+          "DeliveryGroup" : "0",
+          "ShippingPoint" : "1710",
+          "ShippingType" : "",
+          "DeliveryPriority" : "1",
+          "DeliveryDateQuantityIsFixed" : false,
+          "DeliveryDateTypeRule" : "",
+          "IncotermsClassification" : "EXW",
+          "IncotermsTransferLocation" : "Shipping Point 1710 / 100 Te",
+          "IncotermsLocation1" : "Shipping Point 1710 / 100 Tech Dr / Harrisburg PA 17112",
+          "IncotermsLocation2" : "",
+          "TaxAmount" : "0.00",
+          "ProductTaxClassification1" : "0",
+          "ProductTaxClassification2" : "",
+          "ProductTaxClassification3" : "",
+          "ProductTaxClassification4" : "",
+          "ProductTaxClassification5" : "",
+          "ProductTaxClassification6" : "",
+          "ProductTaxClassification7" : "",
+          "ProductTaxClassification8" : "",
+          "ProductTaxClassification9" : "",
+          "MatlAccountAssignmentGroup" : "03",
+          "CostAmount" : "10.15",
+          "CustomerPaymentTerms" : "0001",
+          "FixedValueDate" : null,
+          "CustomerGroup" : "01",
+          "SalesDocumentRjcnReason" : "",
+          "ItemBillingBlockReason" : "",
+          "SlsDocIsRlvtForProofOfDeliv" : false,
+          "WBSElement" : "",
+          "ProfitCenter" : "YH110",
+          "AccountingExchangeRate" : "0.00000",
+          "ReferenceSDDocument" : "",
+          "ReferenceSDDocumentItem" : "0",
+          "CorrespncExternalReference" : "",
+          "POCorrespncExternalReference" : "",
+          "CustomerConditionGroup1" : "",
+          "CustomerConditionGroup2" : "",
+          "CustomerConditionGroup3" : "",
+          "CustomerConditionGroup4" : "",
+          "CustomerConditionGroup5" : "",
+          "SDProcessStatus" : "A",
+          "DeliveryStatus" : "A",
+          "OrderRelatedBillingStatus" : "",
+          "Subtotal1Amount" : "130.00",
+          "Subtotal2Amount" : "130.00",
+          "Subtotal3Amount" : "130.00",
+          "Subtotal4Amount" : "0.00",
+          "Subtotal5Amount" : "0.00",
+          "Subtotal6Amount" : "0.00",
+          "RequirementSegment" : "",
+          "ZZ1_SPA_Agreement_SDI" : "",
+          "ZZ1_CONFIGID_VBAP_SDI" : "",
+          "ZZ1_EUCTRY_VBAP_SDI" : "",
+          "ZZ1_EUNAME_VBAP_SDI" : "",
+          "ZZ1_ITEMCAT_CHANGED_SDI" : false,
+          "ZZ1_FREIGHTAC_SL_SDI" : "",
+          "ZZ1_REFER1_VBAP_SDI" : "",
+          "ZZ1_DOMAIN_VBAP_SDI" : "",
+          "ZZ1_EUID_VBAP_SDI" : "",
+          "ZZ1_EUPHN_VBAP_SDI" : "",
+          "ZZ1_MANUAL_PLANT_IND_SDI" : "",
+          "ZZ1_WHITE_GLOVE_SDI" : false,
+          "ZZ1_LIMIT_ACCESS_SDI" : false,
+          "ZZ1_EUPO_VBAP_SDI" : "",
+          "ZZ1_INSIDE_DEL_SDI" : false,
+          "ZZ1_REMOVE_DEBRIS_SDI" : false,
+          "ZZ1_EUEMAIL_VBAP_SDI" : "",
+          "ZZ1_EUATTN_VBAP_SDI" : "",
+          "ZZ1_HSERIAL_VBAP_SDI" : "",
+          "ZZ1_ValidTo_SDI" : null,
+          "ZZ1_REFER5_VBAP_SDI" : "",
+          "ZZ1_QUARANTINE_FLG_SDI" : false,
+          "ZZ1_INSIDE_UNPACK_SDI" : false,
+          "ZZ1_Liftgate_SDI" : false,
+          "ZZ1_STTYPE_VBAP_SDI" : "0",
+          "ZZ1_MSTCONTR_VBAP_SDI" : "",
+          "ZZ1_RATESHOP_SDI" : false,
+          "ZZ1_REFER4_VBAP_SDI" : "",
+          "ZZ1_PARTNERID_VBAP_SDI" : "",
+          "ZZ1_MAN_SDI" : false,
+          "ZZ1_REFER6_VBAP_SDI" : "",
+          "ZZ1_REFER2_VBAP_SDI" : "",
+          "ZZ1_HSDAT_VBAP_SDI" : null,
+          "ZZ1_QUOTENO_VBAP_SDI" : "",
+          "ZZ1_EUADRS1_VBAP_SDI" : "",
+          "ZZ1_PARCEL_RES_DEL_SDI" : false,
+          "ZZ1_Appoint_LTL_SDI" : false,
+          "ZZ1_EUZIP_VBAP_SDI" : "",
+          "ZZ1_SIG_SDI" : "",
+          "ZZ1_SDATE_VBAP_SDI" : null,
+          "ZZ1_SALES_REVIEW_SDI" : false,
+          "ZZ1_EUSTATE_VBAP_SDI" : "",
+          "ZZ1_VENDOR_IT_BLOCK_SDI" : false,
+          "ZZ1_EUADRS2_VBAP_SDI" : "",
+          "ZZ1_REFER3_VBAP_SDI" : "",
+          "ZZ1_REMAIL_VBAP_SDI" : "",
+          "ZZ1_INSURANCE_SDI" : false,
+          "ZZ1_REPHONE_VBAP_SDI" : "",
+          "ZZ1_SPA_EU_VALIDATION_SDI" : false,
+          "ZZ1_AUTHNO_VBAP_SDI" : "",
+          "ZZ1_RES_DEL_SDI" : false,
+          "ZZ1_EUCITY_VBAP_SDI" : "",
+          "ZZ1_PARCEL_INSURANCE_SDI" : false,
+          "to_BillingPlan" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_BillingPlan"
+            }
+          },
+          "to_Partner" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_Partner"
+            }
+          },
+          "to_PrecedingProcFlowDocItem" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_PrecedingProcFlowDocItem"
+            }
+          },
+          "to_PricingElement" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_PricingElement"
+            }
+          },
+          "to_RelatedObject" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_RelatedObject"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_SalesOrder"
+            }
+          },
+          "to_ScheduleLine" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_ScheduleLine"
+            }
+          },
+          "to_SubsequentProcFlowDocItem" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_SubsequentProcFlowDocItem"
+            }
+          },
+          "to_Text" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='10')/to_Text"
+            }
+          }
+        },
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+          },
+          "SalesOrder" : "2441",
+          "SalesOrderItem" : "20",
+          "HigherLevelItem" : "0",
+          "HigherLevelItemUsage" : "",
+          "SalesOrderItemCategory" : "ZTAN",
+          "SalesOrderItemText" : "Test_QTC_ATP",
+          "PurchaseOrderByCustomer" : "DI-376-0002",
+          "PurchaseOrderByShipToParty" : "",
+          "UnderlyingPurchaseOrderItem" : "",
+          "ExternalItemID" : "",
+          "Material" : "41",
+          "OriginallyRequestedMaterial" : "41",
+          "MaterialByCustomer" : "BAG",
+          "PricingDate" : "\/Date(1782691200000)\/",
+          "PricingReferenceMaterial" : "",
+          "BillingPlan" : "",
+          "RequestedQuantity" : "1",
+          "RequestedQuantityUnit" : "EA",
+          "RequestedQuantitySAPUnit" : "EA",
+          "RequestedQuantityISOUnit" : "EA",
+          "OrderQuantityUnit" : "EA",
+          "OrderQuantitySAPUnit" : "EA",
+          "OrderQuantityISOUnit" : "EA",
+          "ConfdDelivQtyInOrderQtyUnit" : "1",
+          "ItemGrossWeight" : "1.5",
+          "ItemNetWeight" : "1.5",
+          "ItemWeightUnit" : "LB",
+          "ItemWeightSAPUnit" : "LB",
+          "ItemWeightISOUnit" : "LBR",
+          "ItemVolume" : "219.069",
+          "ItemVolumeUnit" : "\"3",
+          "ItemVolumeSAPUnit" : "IN3",
+          "ItemVolumeISOUnit" : "INQ",
+          "TransactionCurrency" : "USD",
+          "NetAmount" : "100.00",
+          "TotalSDDocReferenceStatus" : "",
+          "SDDocReferenceStatus" : "",
+          "MaterialSubstitutionReason" : "",
+          "MaterialGroup" : "LEN-L1",
+          "MaterialPricingGroup" : "",
+          "AdditionalMaterialGroup1" : "H00",
+          "AdditionalMaterialGroup2" : "",
+          "AdditionalMaterialGroup3" : "",
+          "AdditionalMaterialGroup4" : "",
+          "AdditionalMaterialGroup5" : "",
+          "BillingDocumentDate" : "\/Date(1783382400000)\/",
+          "ContractAccount" : "",
+          "AdditionalValueDays" : "0",
+          "ServicesRenderedDate" : null,
+          "Batch" : "",
+          "ProductionPlant" : "1710",
+          "OriginalPlant" : "",
+          "AltvBsdConfSubstitutionStatus" : "",
+          "StorageLocation" : "",
+          "DeliveryGroup" : "0",
+          "ShippingPoint" : "1710",
+          "ShippingType" : "",
+          "DeliveryPriority" : "1",
+          "DeliveryDateQuantityIsFixed" : false,
+          "DeliveryDateTypeRule" : "",
+          "IncotermsClassification" : "EXW",
+          "IncotermsTransferLocation" : "Shipping Point 1710 / 100 Te",
+          "IncotermsLocation1" : "Shipping Point 1710 / 100 Tech Dr / Harrisburg PA 17112",
+          "IncotermsLocation2" : "",
+          "TaxAmount" : "0.00",
+          "ProductTaxClassification1" : "0",
+          "ProductTaxClassification2" : "",
+          "ProductTaxClassification3" : "",
+          "ProductTaxClassification4" : "",
+          "ProductTaxClassification5" : "",
+          "ProductTaxClassification6" : "",
+          "ProductTaxClassification7" : "",
+          "ProductTaxClassification8" : "",
+          "ProductTaxClassification9" : "",
+          "MatlAccountAssignmentGroup" : "03",
+          "CostAmount" : "19.30",
+          "CustomerPaymentTerms" : "0001",
+          "FixedValueDate" : null,
+          "CustomerGroup" : "01",
+          "SalesDocumentRjcnReason" : "",
+          "ItemBillingBlockReason" : "",
+          "SlsDocIsRlvtForProofOfDeliv" : false,
+          "WBSElement" : "",
+          "ProfitCenter" : "YH110",
+          "AccountingExchangeRate" : "0.00000",
+          "ReferenceSDDocument" : "",
+          "ReferenceSDDocumentItem" : "0",
+          "CorrespncExternalReference" : "",
+          "POCorrespncExternalReference" : "",
+          "CustomerConditionGroup1" : "",
+          "CustomerConditionGroup2" : "",
+          "CustomerConditionGroup3" : "",
+          "CustomerConditionGroup4" : "",
+          "CustomerConditionGroup5" : "",
+          "SDProcessStatus" : "A",
+          "DeliveryStatus" : "A",
+          "OrderRelatedBillingStatus" : "",
+          "Subtotal1Amount" : "100.00",
+          "Subtotal2Amount" : "100.00",
+          "Subtotal3Amount" : "100.00",
+          "Subtotal4Amount" : "0.00",
+          "Subtotal5Amount" : "0.00",
+          "Subtotal6Amount" : "0.00",
+          "RequirementSegment" : "",
+          "ZZ1_SPA_Agreement_SDI" : "",
+          "ZZ1_CONFIGID_VBAP_SDI" : "",
+          "ZZ1_EUCTRY_VBAP_SDI" : "",
+          "ZZ1_EUNAME_VBAP_SDI" : "",
+          "ZZ1_ITEMCAT_CHANGED_SDI" : false,
+          "ZZ1_FREIGHTAC_SL_SDI" : "",
+          "ZZ1_REFER1_VBAP_SDI" : "",
+          "ZZ1_DOMAIN_VBAP_SDI" : "",
+          "ZZ1_EUID_VBAP_SDI" : "",
+          "ZZ1_EUPHN_VBAP_SDI" : "",
+          "ZZ1_MANUAL_PLANT_IND_SDI" : "",
+          "ZZ1_WHITE_GLOVE_SDI" : false,
+          "ZZ1_LIMIT_ACCESS_SDI" : false,
+          "ZZ1_EUPO_VBAP_SDI" : "",
+          "ZZ1_INSIDE_DEL_SDI" : false,
+          "ZZ1_REMOVE_DEBRIS_SDI" : false,
+          "ZZ1_EUEMAIL_VBAP_SDI" : "",
+          "ZZ1_EUATTN_VBAP_SDI" : "",
+          "ZZ1_HSERIAL_VBAP_SDI" : "",
+          "ZZ1_ValidTo_SDI" : null,
+          "ZZ1_REFER5_VBAP_SDI" : "",
+          "ZZ1_QUARANTINE_FLG_SDI" : false,
+          "ZZ1_INSIDE_UNPACK_SDI" : false,
+          "ZZ1_Liftgate_SDI" : false,
+          "ZZ1_STTYPE_VBAP_SDI" : "0",
+          "ZZ1_MSTCONTR_VBAP_SDI" : "",
+          "ZZ1_RATESHOP_SDI" : false,
+          "ZZ1_REFER4_VBAP_SDI" : "",
+          "ZZ1_PARTNERID_VBAP_SDI" : "",
+          "ZZ1_MAN_SDI" : false,
+          "ZZ1_REFER6_VBAP_SDI" : "",
+          "ZZ1_REFER2_VBAP_SDI" : "",
+          "ZZ1_HSDAT_VBAP_SDI" : null,
+          "ZZ1_QUOTENO_VBAP_SDI" : "",
+          "ZZ1_EUADRS1_VBAP_SDI" : "",
+          "ZZ1_PARCEL_RES_DEL_SDI" : false,
+          "ZZ1_Appoint_LTL_SDI" : false,
+          "ZZ1_EUZIP_VBAP_SDI" : "",
+          "ZZ1_SIG_SDI" : "",
+          "ZZ1_SDATE_VBAP_SDI" : null,
+          "ZZ1_SALES_REVIEW_SDI" : false,
+          "ZZ1_EUSTATE_VBAP_SDI" : "",
+          "ZZ1_VENDOR_IT_BLOCK_SDI" : false,
+          "ZZ1_EUADRS2_VBAP_SDI" : "",
+          "ZZ1_REFER3_VBAP_SDI" : "",
+          "ZZ1_REMAIL_VBAP_SDI" : "",
+          "ZZ1_INSURANCE_SDI" : false,
+          "ZZ1_REPHONE_VBAP_SDI" : "",
+          "ZZ1_SPA_EU_VALIDATION_SDI" : false,
+          "ZZ1_AUTHNO_VBAP_SDI" : "",
+          "ZZ1_RES_DEL_SDI" : false,
+          "ZZ1_EUCITY_VBAP_SDI" : "",
+          "ZZ1_PARCEL_INSURANCE_SDI" : false,
+          "to_BillingPlan" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_BillingPlan"
+            }
+          },
+          "to_Partner" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_Partner"
+            }
+          },
+          "to_PrecedingProcFlowDocItem" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_PrecedingProcFlowDocItem"
+            }
+          },
+          "to_PricingElement" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_PricingElement"
+            }
+          },
+          "to_RelatedObject" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_RelatedObject"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_SalesOrder"
+            }
+          },
+          "to_ScheduleLine" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_ScheduleLine"
+            }
+          },
+          "to_SubsequentProcFlowDocItem" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_SubsequentProcFlowDocItem"
+            }
+          },
+          "to_Text" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderItem(SalesOrder='2441',SalesOrderItem='20')/to_Text"
+            }
+          }
+        }
+      ]
+    },
+    "to_Partner" : {
+      "results" : [
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='PY')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='PY')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType"
+          },
+          "SalesOrder" : "2441",
+          "PartnerFunction" : "PY",
+          "PartnerFunctionInternalCode" : "RG",
+          "Customer" : "17100001",
+          "Supplier" : "",
+          "Personnel" : "0",
+          "ContactPerson" : "0",
+          "ReferenceBusinessPartner" : "17100001",
+          "BusinessPartnerAddressUUID" : "00000000-0000-0000-0000-000000000000",
+          "BPRefAddrForDocSpcfcAddrUUID" : "00000000-0000-0000-0000-000000000000",
+          "AddressID" : "964",
+          "VATRegistration" : "",
+          "to_Address" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='PY')/to_Address"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='PY')/to_SalesOrder"
+            }
+          }
+        },
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='ZF')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='ZF')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType"
+          },
+          "SalesOrder" : "2441",
+          "PartnerFunction" : "ZF",
+          "PartnerFunctionInternalCode" : "ZF",
+          "Customer" : "",
+          "Supplier" : "",
+          "Personnel" : "1",
+          "ContactPerson" : "0",
+          "ReferenceBusinessPartner" : "9980000000",
+          "BusinessPartnerAddressUUID" : "00000000-0000-0000-0000-000000000000",
+          "BPRefAddrForDocSpcfcAddrUUID" : "00000000-0000-0000-0000-000000000000",
+          "AddressID" : "",
+          "VATRegistration" : "",
+          "to_Address" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='ZF')/to_Address"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='ZF')/to_SalesOrder"
+            }
+          }
+        },
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SP')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SP')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType"
+          },
+          "SalesOrder" : "2441",
+          "PartnerFunction" : "SP",
+          "PartnerFunctionInternalCode" : "AG",
+          "Customer" : "17100001",
+          "Supplier" : "",
+          "Personnel" : "0",
+          "ContactPerson" : "0",
+          "ReferenceBusinessPartner" : "17100001",
+          "BusinessPartnerAddressUUID" : "59f60e32-017c-1fe0-b99a-4e73e5c0e9e6",
+          "BPRefAddrForDocSpcfcAddrUUID" : "00000000-0000-0000-0000-000000000000",
+          "AddressID" : "961",
+          "VATRegistration" : "",
+          "to_Address" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SP')/to_Address"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SP')/to_SalesOrder"
+            }
+          }
+        },
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='BP')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='BP')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType"
+          },
+          "SalesOrder" : "2441",
+          "PartnerFunction" : "BP",
+          "PartnerFunctionInternalCode" : "RE",
+          "Customer" : "17100001",
+          "Supplier" : "",
+          "Personnel" : "0",
+          "ContactPerson" : "0",
+          "ReferenceBusinessPartner" : "17100001",
+          "BusinessPartnerAddressUUID" : "59f60e32-017c-1fe0-b99a-4e73e5c0e9e6",
+          "BPRefAddrForDocSpcfcAddrUUID" : "00000000-0000-0000-0000-000000000000",
+          "AddressID" : "961",
+          "VATRegistration" : "",
+          "to_Address" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='BP')/to_Address"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='BP')/to_SalesOrder"
+            }
+          }
+        },
+        {
+          "__metadata" : {
+            "id" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SH')",
+            "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SH')",
+            "type" : "API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType"
+          },
+          "SalesOrder" : "2441",
+          "PartnerFunction" : "SH",
+          "PartnerFunctionInternalCode" : "WE",
+          "Customer" : "17100001",
+          "Supplier" : "",
+          "Personnel" : "0",
+          "ContactPerson" : "0",
+          "ReferenceBusinessPartner" : "17100001",
+          "BusinessPartnerAddressUUID" : "219eee52-e054-1fe1-93e1-683f5b432fa4",
+          "BPRefAddrForDocSpcfcAddrUUID" : "00000000-0000-0000-0000-000000000000",
+          "AddressID" : "2621",
+          "VATRegistration" : "",
+          "to_Address" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SH')/to_Address"
+            }
+          },
+          "to_SalesOrder" : {
+            "__deferred" : {
+              "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrderHeaderPartner(SalesOrder='2441',PartnerFunction='SH')/to_SalesOrder"
+            }
+          }
+        }
+      ]
+    },
+    "to_PaymentPlanItemDetails" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_PaymentPlanItemDetails"
+      }
+    },
+    "to_PrecedingProcFlowDoc" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_PrecedingProcFlowDoc"
+      }
+    },
+    "to_PricingElement" : {
+      "results" : [
+
+      ]
+    },
+    "to_RelatedObject" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_RelatedObject"
+      }
+    },
+    "to_SubsequentProcFlowDoc" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_SubsequentProcFlowDoc"
+      }
+    },
+    "to_Text" : {
+      "__deferred" : {
+        "uri" : "https://vhdhbds4ci.sap.dandh.net:44300/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')/to_Text"
+      }
+    }
+  }
+}
+
 /sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')?$format=json&$expand=to_Credit,to_Item,to_Partner,to_Pricing,to_PricingElement
 
 {
