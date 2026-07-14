@@ -1,3 +1,5 @@
+/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('2441')?$format=json&$expand=to_Credit,to_Item,to_Partner,to_Pricing,to_PricingElement
+
 {
     "SalesOrderType": "OR",
     "SalesOrganization": "1010",
