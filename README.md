@@ -1,3 +1,10 @@
+<CustomerPurchaseOrderDate>2026-07-15T00:00:00</CustomerPurchaseOrderDate>
+
+{
+  "CustomerPurchaseOrderDate": "/Date(1784073600000)/"
+}
+
+
 FIELD-SYMBOLS:
   <fs_any> TYPE any.
 
