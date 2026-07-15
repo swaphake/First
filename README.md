@@ -1,3 +1,18 @@
+FIELD-SYMBOLS:
+  <fs_any> TYPE any.
+
+ASSIGN ls_deep->* TO <fs_any>.
+
+DATA lr_copy TYPE REF TO data.
+
+CREATE DATA lr_copy LIKE <fs_any>.
+ASSIGN lr_copy->* TO FIELD-SYMBOL(<ls_copy>).
+
+<ls_copy> = <fs_any>.
+
+
+========================================================
+
 {
   "d" : {
     "__metadata" : {
