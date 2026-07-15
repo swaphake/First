@@ -1,3 +1,18 @@
+IF ts_deep_entity-customerpurchaseorderdate IS INITIAL.
+
+  DATA lv_ts TYPE timestamp.
+
+  CONVERT DATE sy-datum
+          TIME '000000'
+          INTO TIME STAMP DATA(lv_tsl)
+          TIME ZONE sy-zonlo.
+
+  lv_ts = lv_tsl.
+
+  ts_deep_entity-customerpurchaseorderdate = lv_ts.
+
+ENDIF.
+
 <CustomerPurchaseOrderDate>2026-07-15T00:00:00</CustomerPurchaseOrderDate>
 
 {
