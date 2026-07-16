@@ -1,3 +1,15 @@
+METHOD define.
+  super->define( ). " Keeps all standard entity definitions intact
+
+  " Get your parent entity type reference
+  DATA(lo_entity_type) = model->get_entity_type( iv_entity_name = 'YourParentEntityName' ).
+
+  " Bind it to your custom deep DDIC structure type definition
+  lo_entity_type->bind_structure( 'ZCL_..._MPC_EXT=>TY_YOUR_DEEP_STRUCTURE' ).
+ENDMETHOD.
+
+=====================================================
+
 {`{ "SalesOrderType": "ZOR", "SalesOrganization": "1710", "DistributionChannel": "10", "OrganizationDivision": "00", "SoldToParty": "17100001", "PurchaseOrderByCustomer": "DI-376-0002", "CustomerPaymentTerms": "0001", "to_Item": [ { "SalesOrderItem": "10", "HigherLevelItem": "0", "SalesOrderItemCategory": "ZTAN", "PurchaseOrderByCustomer": "DI-376-0002", "Material": "33", "RequestedQuantity": "1", "DeliveryPriority": "1", "to_ScheduleLine": [], "to_Partner": [], "to_PricingElement": [] }, { "SalesOrderItem": "20", "HigherLevelItem": "0", "SalesOrderItemCategory": "ZTAN", "PurchaseOrderByCustomer": "DI-376-0002", "Material": "41", "RequestedQuantity": "1", "DeliveryPriority": "1", "to_ScheduleLine": [], "to_Partner": [], "to_PricingElement": [] } ], "to_Pricing": {}, "to_PricingElement": [], "to_Partner": [ { "PartnerFunction": "PY", "Customer": "17100001" }, { "PartnerFunction": "SP", "Customer": "17100001" }, { "PartnerFunction": "BP", "Customer": "17100001" }, { "PartnerFunction": "SH", "Customer": "17100001" } ], "to_Credit": {} }`}
 
 ===========================================================
