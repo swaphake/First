@@ -1,3 +1,32 @@
+DS4K902446       ABOJJAWAR    QTC 09JUN26 505 : DI_376 Simulation of freight cost in S4
+
+    DS4K903002   SHAKE        Development/Correction
+
+        Class (ABAP Objects)
+
+            ZCL_SD_376_FREIGHTCST_SIM
+            ZCL_SD_SALES_ORDER_SIM_DPC
+            ZCL_SD_SALES_ORDER_SIM_DPC_EXT
+            ZCL_SD_SALES_ORDER_SIM_MPC
+            ZCL_SD_SALES_ORDER_SIM_MPC_EXT
+
+        SAP Gateway Business Suite Enablement - Model
+        SAP Gateway: Model Metadata
+        SAP Gateway BSE - Service Builder Project
+
+            ZSD_SALES_ORDER_SIMULATION
+
+        SAP Gateway: Service Groups Metadata
+        SAP Gateway Business Suite Enablement - Service
+
+            ZSD_SALES_ORDER_SIMULATION_SRV     0001
+
+
+
+=======================================================================================================================            
+
+
+
 METHOD define.
   super->define( ). " Keeps all standard entity definitions intact
 
