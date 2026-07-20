@@ -1,3 +1,213 @@
+ TYPES: BEGIN OF ty_sched,
+             posnr TYPE vbep-posnr,
+             matnr TYPE vbap-matnr,
+             werks TYPE vbap-werks,
+             edatu TYPE vbep-edatu,
+             bmeng TYPE vbep-bmeng,
+           END OF ty_sched.
+
+    DATA: lt_sched       TYPE STANDARD TABLE OF ty_sched,
+          lt_vbap_g      TYPE va_vbapvb_t,
+          lt_vbep_g      TYPE va_vbepvb_t,
+          lt_rates       TYPE zxps_route_rates,
+          lt_check       TYPE zxps_route_rates,
+          lt_rates_final TYPE zxps_route_rates,
+          lv_flag        TYPE char1,
+          lv_flag2       TYPE char1.
+
+    FIELD-SYMBOLS:
+      <fs_vbap> TYPE vbapvb,
+      <fs_vbep> TYPE vbepvb,
+      <fs_mem>  TYPE any.
+
+*-----------------------------------------------------------------------
+* Build helper table with Plant + Ship Date
+*-----------------------------------------------------------------------
+    LOOP AT it_vbep ASSIGNING <fs_vbep>.
+
+      READ TABLE it_vbap ASSIGNING <fs_vbap>
+           WITH KEY posnr = <fs_vbep>-posnr.
+
+      IF sy-subrc <> 0.
+        CONTINUE.
+      ENDIF.
+
+      APPEND VALUE ty_sched(
+               posnr = <fs_vbep>-posnr
+               matnr = <fs_vbap>-matnr
+               werks = <fs_vbap>-werks
+               edatu = <fs_vbep>-edatu
+               bmeng = <fs_vbep>-bmeng ) TO lt_sched. "#EC CI_STDSEQ
+
+    ENDLOOP.
+    DELETE lt_sched WHERE bmeng IS INITIAL. "#EC CI_STDSEQ
+*-----------------------------------------------------------------------
+* Group by Plant + Ship Date
+*-----------------------------------------------------------------------
+    LOOP AT lt_sched INTO DATA(ls_sched)
+         GROUP BY (
+           werks = ls_sched-werks
+           edatu = ls_sched-edatu )
+         ASSIGNING FIELD-SYMBOL(<fs_group>) .
+
+      CLEAR:
+        lt_vbap_g,
+        lt_vbep_g,
+        lt_rates.
+
+
+      IF lv_flag IS INITIAL AND lv_flag2 IS INITIAL.
+        lv_flag = abap_true.
+      ELSE.
+        lv_flag2 = abap_true.
+        lv_flag = abap_false.
+      ENDIF.
+      LOOP AT GROUP <fs_group> ASSIGNING FIELD-SYMBOL(<fs_member>).
+
+        "VBEP
+        READ TABLE it_vbep ASSIGNING <fs_vbep>
+             WITH KEY posnr = <fs_member>-posnr
+                      edatu = <fs_member>-edatu.
+
+        IF sy-subrc = 0.
+          APPEND <fs_vbep> TO lt_vbep_g. "#EC CI_STDSEQ
+        ENDIF.
+
+        "VBAP
+        READ TABLE it_vbap ASSIGNING <fs_vbap>
+             WITH KEY posnr = <fs_member>-posnr.
+
+        IF sy-subrc = 0.
+
+          IF NOT line_exists( lt_vbap_g[ posnr = <fs_vbap>-posnr ] ).
+            APPEND <fs_vbap> TO lt_vbap_g. "#EC CI_STDSEQ
+          ENDIF.
+
+        ENDIF.
+
+      ENDLOOP.
+
+      "--------------------------------------------------------------
+      " Call SCT Rate Shop FM
+      "--------------------------------------------------------------
+      CALL FUNCTION 'ZXPS_RATESHOP_SO_SIM'
+        EXPORTING
+          i_vbak   = iv_vbak
+          it_vbap  = lt_vbap_g
+          it_vbep  = lt_vbep_g
+          it_vbpa  = it_vbpa "lt_vbpa_g
+          it_vbadr = it_vbadr " lt_vbadr_g
+        IMPORTING
+          e_rates  = lt_rates.
+
+      "--------------------------------------------------------------
+      " Process/Append returned rates here
+      "--------------------------------------------------------------
+
+      IF lv_flag = abap_true.
+        APPEND LINES OF lt_rates TO ev_rates.
+        lt_check[] = ev_rates[].
+      ELSE.
+        CLEAR ev_rates.
+        ev_rates[] = lt_check[].
+        LOOP AT ev_rates INTO DATA(ls_check).
+
+          READ TABLE lt_rates INTO DATA(ls_result) WITH KEY lifnr = ls_check-lifnr service_type = ls_check-service_type.
+
+          IF sy-subrc = 0.
+            APPEND ls_result TO lt_check.
+          ELSE.
+            DELETE lt_check WHERE  lifnr = ls_check-lifnr AND service_type = ls_check-service_type.
+          ENDIF.
+
+        ENDLOOP.
+      ENDIF.
+    ENDLOOP.
+
+    " Sent the responces back to Simulation API
+    IF lt_check IS NOT INITIAL.
+      SORT ev_rates BY lifnr service_type.
+      lt_rates_final = VALUE #( FOR GROUPS lv_grp OF ls_rates IN lt_check GROUP BY ( lifnr = ls_rates-lifnr
+                                                                                    service_type = ls_rates-service_type
+                                                                                   )
+                  LET lv_list_charg = REDUCE #( INIT lv_line TYPE /sctech/net_list_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line = lv_line + lv_rates-list_charge
+                                         )
+                   lv_disc_charge = REDUCE #( INIT lv_line1 TYPE /sctech/net_disc_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line1 = lv_line1 + lv_rates-discount_charge
+                                         )
+                   lv_adj_charge = REDUCE #( INIT lv_line2 TYPE zxps_net_adj_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line2 = lv_line2 + lv_rates-adjusted_charge
+                                         )
+                   lv_cust_charge = REDUCE #( INIT lv_line3 TYPE zxps_net_cust_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line3 = lv_line3 + lv_rates-customer_charge
+                                         )
+                   lv_pkgs_in = REDUCE #( INIT lv_line4 TYPE /sctech/anzpk
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line4 = lv_line4 + lv_rates-pkgs_in
+                                         )
+                   lv_pkgs_out = REDUCE #( INIT lv_line5 TYPE /sctech/rated_pkgs
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line5 = lv_line5 + lv_rates-pkgs_out
+                                         )
+                   lv_tot_access = REDUCE #( INIT lv_line6 TYPE /sctech/acc_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line6 = lv_line6 + lv_rates-tot_accessorial
+                                          )
+                   lv_adj_access = REDUCE #( INIT lv_line7 TYPE zxps_adj_acc_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line7 = lv_line7 + lv_rates-adjusted_accessorial
+                                          )
+                   lv_cust_access = REDUCE #( INIT lv_line8 TYPE zxps_cust_acc_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line8 = lv_line8 + lv_rates-customer_accessorial
+                                          )
+                   lv_fre_charge = REDUCE #( INIT lv_line9 TYPE /sctech/base_charge
+                                      FOR lv_rates IN GROUP lv_grp
+                                      NEXT lv_line9 = lv_line9 + lv_rates-freight_charge
+                                          )
+               IN ( lifnr = lv_grp-lifnr
+                    service_type = lv_grp-service_type
+                    list_charge = lv_list_charg
+                    discount_charge = lv_disc_charge
+                    adjusted_charge = lv_adj_charge
+                    customer_charge = lv_cust_charge
+                    pkgs_in = lv_pkgs_in
+                    pkgs_out = lv_pkgs_out
+                    tot_accessorial = lv_tot_access
+                    adjusted_accessorial = lv_adj_access
+                    customer_accessorial = lv_cust_access
+                    freight_charge = lv_fre_charge
+                     ) ).
+
+      IF lt_rates_final IS NOT INITIAL.
+
+        LOOP AT lt_rates_final ASSIGNING FIELD-SYMBOL(<fs_rate>).
+          READ TABLE lt_check INTO DATA(ls_rate) WITH KEY lifnr = <fs_rate>-lifnr service_type = <fs_rate>-service_type BINARY SEARCH.
+
+          <fs_rate>-xsitd = ls_rate-xsitd.
+          <fs_rate>-description = ls_rate-description.
+          <fs_rate>-inf_service_type = ls_rate-inf_service_type.
+          <fs_rate>-waers = ls_rate-waers.
+          <fs_rate>-deliver_by = ls_rate-deliver_by.
+          <fs_rate>-delivery_time = ls_rate-delivery_time.
+        ENDLOOP.
+      ENDIF.
+
+      CALL METHOD zcl_sd_376_freightcst_sim=>set_data
+        EXPORTING
+          it_rateshop = lt_rates_final.
+
+    ENDIF.
+
+
+============================------------============================================================
+
+
 DS4K902446       ABOJJAWAR    QTC 09JUN26 505 : DI_376 Simulation of freight cost in S4
 
     DS4K903002   SHAKE        Development/Correction
