@@ -1,3 +1,11 @@
+100ZSD_S_131_DOC_TYPE            S0000
+100ZSD_S_131_CONDITION_RECORD    S0000
+100ZSD_S_131_CONDITION_RECORD    S0001
+
+DS4K902699 100   SHAKE        QTC 15JUN26 254: DI_131 SPA/Bid/Agreement Validation TVARVC
+DS4K902655       SHAKE        QTC 15JUN26 254: DI_131_E_QTCSV: SPA/Bid/Agreement Validatio
+ 
+ 
  TYPES: BEGIN OF ty_sched,
              posnr TYPE vbep-posnr,
              matnr TYPE vbap-matnr,
