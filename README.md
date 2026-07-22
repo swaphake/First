@@ -1,3 +1,27 @@
+            lt_data_tp = VALUE #( FOR ls_raw_tp IN lt_raw_tp
+                                   ( purchaseorder = ls_raw_tp-purchaseorder
+                                     purchaseorderitem = ls_raw_tp-purchaseorderitem
+                                     supplier = ls_raw_tp-supplier
+                                     material = ls_raw_tp-material
+                                     salesorder = ls_raw_tp-salesorder
+                                     plant = ls_raw_tp-plant "VALUE #( lt_master[ supplier = ls_raw_tp-supplier ]-plant OPTIONAL )
+                                     companycode = VALUE #( lt_master[ supplier = ls_raw_tp-supplier plant = ls_raw_tp-plant ]-companycode OPTIONAL )
+                                     forcastmonth = ls_raw_tp-schedulelinemonth
+                                     forcastdate = VALUE #( lt_master[ supplier = ls_raw_tp-supplier plant = ls_raw_tp-plant forcast_date = ls_raw_tp-schedulelinemonth ]-forcast_date OPTIONAL )  ) ). "++
+
+            "Populating the Third party PO data also along with the Standard Item PO
+*            lt_data = VALUE #( BASE lt_data FOR ls_data1 IN lt_data_tp
+*                                    ( purchaseorder = ls_data1-purchaseorder
+*                                      purchaseorderitem = ls_data1-purchaseorderitem
+*                                      supplier = ls_data1-supplier
+*                                      material = ls_data1-material
+*                                      plant =  ls_data1-plant
+*                                      companycode =  ls_data1-companycode
+*                                      forcastmonth = ls_data1-forcastmonth
+*                                      forcastdate = ls_data1-forcastdate ) ). "++
+
+* 529 deleted code                                 
+
 100ZSD_S_131_DOC_TYPE            S0000
 100ZSD_S_131_CONDITION_RECORD    S0000
 100ZSD_S_131_CONDITION_RECORD    S0001
